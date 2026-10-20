@@ -1,0 +1,52 @@
+{
+  "name": "zx-save-restricted-bot",
+  "description": "Telegram Save Restricted Content Bot",
+  "repository": "https://github.com/creator154/Zx-Save-Restricted-Content",
+  "keywords": [
+    "telegram",
+    "python",
+    "bot"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token",
+      "required": true
+    },
+    "API_ID": {
+      "description": "Telegram API ID",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Telegram API Hash",
+      "required": true
+    },
+    "DB_URI": {
+      "description": "MongoDB connection URI",
+      "required": true
+    },
+    "DB_NAME": {
+      "value": "vjsavecontentbot"
+    },
+    "LOGIN_SYSTEM": {
+      "value": "True"
+    },
+    "ADMINS": {
+      "description": "Telegram Owner ID",
+      "value": "6073523936"
+    },
+    "CHANNEL_ID": {
+      "value": ""
+    },
+    "WAITING_TIME": {
+      "value": "10"
+    },
+    "ERROR_MESSAGE": {
+      "value": "True"
+    }
+  }
+}
