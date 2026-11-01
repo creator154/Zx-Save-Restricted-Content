@@ -1,4 +1,3 @@
-
 # Don't Remove Credit Tg - @VJ_Bots
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
 # Ask Doubt on telegram @KingVJ01
@@ -6,18 +5,11 @@
 from pyrogram import Client
 from config import API_ID, API_HASH, BOT_TOKEN, STRING_SESSION, LOGIN_SYSTEM
 
-
-# User Client
-TechVJUser = None
-
-if STRING_SESSION and not LOGIN_SYSTEM:
-    TechVJUser = Client(
-        "TechVJ",
-        api_id=API_ID,
-        api_hash=API_HASH,
-        session_string=STRING_SESSION
-    )
-
+if STRING_SESSION is not None and LOGIN_SYSTEM == False:
+	TechVJUser = Client("TechVJ", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION)
+	TechVJUser.start()
+else:
+    TechVJUser = None
 
 class Bot(Client):
 
@@ -32,22 +24,21 @@ class Bot(Client):
             sleep_threshold=5
         )
 
+      
     async def start(self):
+            
         await super().start()
-
-        if TechVJUser is not None:
-            await TechVJUser.start()
-
-        print("Bot Started Powered By @VJ_Bots")
+        print('Bot Started Powered By @VJ_Bots')
 
     async def stop(self, *args):
-        if TechVJUser is not None:
-            await TechVJUser.stop()
 
         await super().stop()
-        print("Bot Stopped Bye")
-
+        print('Bot Stopped Bye')
 
 if __name__ == "__main__":
     bot = Bot()
     bot.run()
+
+# Don't Remove Credit Tg - @VJ_Bots
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
